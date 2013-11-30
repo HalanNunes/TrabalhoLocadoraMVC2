@@ -16,10 +16,10 @@
         @Html.HiddenFor(model => model.Id)
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.ClienteId, "Cliente")
+            @Html.LabelFor(model => model.ClienteId)
         </div>
         <div class="editor-field">
-            @Html.DropDownList("ClienteId", String.Empty)
+            @Html.EditorFor(model => model.ClienteId)
             @Html.ValidationMessageFor(model => model.ClienteId)
         </div>
 
@@ -48,7 +48,7 @@
         </div>
 
         <p>
-            <input type="submit" value="Save" />
+            <input type="submit" value="Save" class="btn btn-success"/>
         </p>
     </fieldset>
 }

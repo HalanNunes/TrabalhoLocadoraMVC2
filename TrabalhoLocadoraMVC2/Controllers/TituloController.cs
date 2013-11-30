@@ -43,6 +43,7 @@ namespace TrabalhoLocadoraMVC2.Controllers
         {
             ViewBag.MultiSelectAtores = new MultiSelectList(db.Atores.ToList(), "Id", "Nome");
             ViewBag.MultiSelectGeneros = new MultiSelectList(db.Generos.ToList(), "Id", "Descricao");
+            ViewBag.TipoTituloId = new SelectList(db.TipoTitulos, "Id", "Descricao");
             return View();
         }
 
@@ -52,7 +53,7 @@ namespace TrabalhoLocadoraMVC2.Controllers
         [HttpPost]
         public ActionResult Create(Titulo titulo, FormCollection formCollection, string[] arrayAtores, string[] arrayGeneros)
         {
-            titulo.TipoTitulo = db.TipoTitulos.Find(titulo.TipoTituloId);
+            //titulo.TipoTitulo = db.TipoTitulos.Find(titulo.TipoTituloId);
             if (arrayAtores != null)
             {
                 titulo.Atores = new List<Ator>();
@@ -81,6 +82,7 @@ namespace TrabalhoLocadoraMVC2.Controllers
             }
             ViewBag.MultiSelectAtores = new MultiSelectList(db.Atores.ToList(), "Id", "Nome");
             ViewBag.MultiSelectGeneros = new MultiSelectList(db.Generos.ToList(), "Id", "Descricao");
+            ViewBag.TipoTituloId = new SelectList(db.TipoTitulos, "Id", "Descricao", titulo.TipoTituloId);
             return View(titulo);
         }
 
@@ -99,6 +101,7 @@ namespace TrabalhoLocadoraMVC2.Controllers
 
             ViewBag.MultiSelectAtores = new MultiSelectList(db.Atores.ToList(), "Id", "Nome", selectedAtores);
             ViewBag.MultiSelectGeneros = new MultiSelectList(db.Generos.ToList(), "Id", "Descricao", selectedGeneros);
+            ViewBag.TipoTituloId = new SelectList(db.TipoTitulos, "Id", "Descricao", titulo.TipoTituloId);
             return View(titulo);
         }
 

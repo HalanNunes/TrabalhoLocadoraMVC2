@@ -2,12 +2,16 @@
 
 @{
     ViewBag.Title = "Create";
+    string erro = ViewBag.Erro;
 }
+
+
+<h2>@{ @Html.Raw(erro); }</h2>
+
 
 <h2>Create</h2>
 
 @using (Html.BeginForm()) {
-    @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
 
     <fieldset>
@@ -22,10 +26,10 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.CopiaId)
+            @Html.LabelFor(model => model.CopiaId, "Copia")
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.CopiaId)
+            @Html.DropDownList("CopiaId", String.Empty)
             @Html.ValidationMessageFor(model => model.CopiaId)
         </div>
 
@@ -36,17 +40,8 @@
             @Html.EditorFor(model => model.DataLocacao)
             @Html.ValidationMessageFor(model => model.DataLocacao)
         </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.DataDevolucao)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.DataDevolucao)
-            @Html.ValidationMessageFor(model => model.DataDevolucao)
-        </div>
-
         <p>
-            <input type="submit" value="Create" />
+            <input type="submit" value="Create" class="btn btn-success"/>
         </p>
     </fieldset>
 }

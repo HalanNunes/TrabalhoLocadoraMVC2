@@ -40,6 +40,8 @@ namespace TrabalhoLocadoraMVC2.Controllers
 
         public ActionResult Create()
         {
+            ViewBag.TituloId = new SelectList(db.Titulos, "Id", "Nome");
+            ViewBag.TipoCopiaId = new SelectList(db.TipoCopias, "Id", "Descricao");
             return View();
         }
 
@@ -47,10 +49,9 @@ namespace TrabalhoLocadoraMVC2.Controllers
         // POST: /Copia/Create
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Create(Copia copia)
         {
-            copia.TipoCopia = db.TipoCopias.Find(copia.TipoCopiaId);
-            copia.Titulo = db.Titulos.Find(copia.TituloId);
             if (ModelState.IsValid)
             {
                 db.Copias.Add(copia);
@@ -58,8 +59,11 @@ namespace TrabalhoLocadoraMVC2.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.TituloId = new SelectList(db.Titulos, "Id", "Nome", copia.TituloId);
+            ViewBag.TipoCopiaId = new SelectList(db.TipoCopias, "Id", "Descricao", copia.TipoCopiaId);
             return View(copia);
         }
+
 
         //
         // GET: /Copia/Edit/5
@@ -71,6 +75,8 @@ namespace TrabalhoLocadoraMVC2.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.TituloId = new SelectList(db.Titulos, "Id", "Nome", copia.TituloId);
+            ViewBag.TipoCopiaId = new SelectList(db.TipoCopias, "Id", "Descricao", copia.TipoCopiaId);
             return View(copia);
         }
 
@@ -80,14 +86,14 @@ namespace TrabalhoLocadoraMVC2.Controllers
         [HttpPost]
         public ActionResult Edit(Copia copia)
         {
-            copia.TipoCopia = db.TipoCopias.Find(copia.TipoCopiaId);
-            copia.Titulo = db.Titulos.Find(copia.TituloId);
             if (ModelState.IsValid)
             {
                 db.Entry(copia).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.TituloId = new SelectList(db.Titulos, "Id", "Nome", copia.TituloId);
+            ViewBag.TipoCopiaId = new SelectList(db.TipoCopias, "Id", "Descricao", copia.TipoCopiaId);
             return View(copia);
         }
 

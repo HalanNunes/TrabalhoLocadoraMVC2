@@ -11,20 +11,6 @@
     <legend>Locacao</legend>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.Cliente.Nome)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Cliente.Nome)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.CopiaId)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.CopiaId)
-    </div>
-
-    <div class="display-label">
          @Html.DisplayNameFor(model => model.DataLocacao)
     </div>
     <div class="display-field">
@@ -39,7 +25,6 @@
     </div>
 </fieldset>
 @using (Html.BeginForm()) {
-    @Html.AntiForgeryToken()
     <p>
         <input type="submit" value="Delete" /> |
         @Html.ActionLink("Back to List", "Index")

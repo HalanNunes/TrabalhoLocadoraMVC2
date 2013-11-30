@@ -10,20 +10,6 @@
     <legend>Locacao</legend>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.Cliente.Nome)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Cliente.Nome)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.CopiaId)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.CopiaId)
-    </div>
-
-    <div class="display-label">
          @Html.DisplayNameFor(model => model.DataLocacao)
     </div>
     <div class="display-field">
@@ -33,9 +19,9 @@
     <div class="display-label">
          @Html.DisplayNameFor(model => model.DataDevolucao)
     </div>
-    <div class="display-field">
+@*    <div class="display-field">
         @Html.DisplayFor(model => model.DataDevolucao)
-    </div>
+    </div>*@
 </fieldset>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |

@@ -42,6 +42,7 @@ namespace TrabalhoLocadoraMVC2.Controllers
         public ActionResult Create()
         {
             ViewBag.ClienteId = new SelectList(db.Clientes, "Id", "Nome");
+            ViewBag.CopiaId = new SelectList(db.Copias, "Id", "Copia");
             return View();
         }
 
@@ -60,6 +61,7 @@ namespace TrabalhoLocadoraMVC2.Controllers
             }
 
             ViewBag.ClienteId = new SelectList(db.Clientes, "Id", "Nome", locacao.ClienteId);
+            ViewBag.CopiaId = new SelectList(db.Copias, "Id", "Copia", locacao.CopiaId);
             return View(locacao);
         }
 
@@ -74,6 +76,7 @@ namespace TrabalhoLocadoraMVC2.Controllers
                 return HttpNotFound();
             }
             ViewBag.ClienteId = new SelectList(db.Clientes, "Id", "Nome", locacao.ClienteId);
+            ViewBag.CopiaId = new SelectList(db.Copias, "Id", "Copia", locacao.CopiaId);
             return View(locacao);
         }
 
@@ -91,6 +94,7 @@ namespace TrabalhoLocadoraMVC2.Controllers
                 return RedirectToAction("Index");
             }
             ViewBag.ClienteId = new SelectList(db.Clientes, "Id", "Nome", locacao.ClienteId);
+            ViewBag.CopiaId = new SelectList(db.Copias, "Id", "Copia", locacao.CopiaId);
             return View(locacao);
         }
 
