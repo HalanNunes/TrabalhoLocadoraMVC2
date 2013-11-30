@@ -1,0 +1,64 @@
+﻿@model TrabalhoLocadoraMVC2.Models.Titulo
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Titulo</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Nome)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Nome)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Sinopse)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Sinopse)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.OrigemTitulo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.OrigemTitulo)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Ano)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Ano)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TipoTituloId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TipoTituloId)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DescricaoAtores)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DescricaoAtores)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DescricaoGeneros)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DescricaoGeneros)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

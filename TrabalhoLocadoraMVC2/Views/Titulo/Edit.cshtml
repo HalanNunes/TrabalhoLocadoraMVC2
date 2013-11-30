@@ -1,0 +1,83 @@
+﻿@model TrabalhoLocadoraMVC2.Models.Titulo
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Titulo</legend>
+
+        @Html.HiddenFor(model => model.Id)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Nome)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Nome)
+            @Html.ValidationMessageFor(model => model.Nome)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Sinopse)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Sinopse)
+            @Html.ValidationMessageFor(model => model.Sinopse)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.OrigemTitulo)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.OrigemTitulo)
+            @Html.ValidationMessageFor(model => model.OrigemTitulo)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Ano)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Ano)
+            @Html.ValidationMessageFor(model => model.Ano)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TipoTituloId)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.TipoTituloId)
+            @Html.ValidationMessageFor(model => model.TipoTituloId)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Atores)
+        </div>
+        <div class="editor-field">
+            @Html.ListBox("ArrayAtores", (MultiSelectList)ViewBag.MultiSelectAtores)
+            @Html.ValidationMessageFor(model => model.ArrayAtores)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Generos)
+        </div>
+        <div class="editor-field">
+            @Html.ListBox("ArrayGeneros", (MultiSelectList)ViewBag.MultiSelectGeneros)
+            @Html.ValidationMessageFor(model => model.ArrayGeneros)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

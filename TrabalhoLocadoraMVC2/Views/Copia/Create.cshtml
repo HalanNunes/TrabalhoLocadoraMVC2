@@ -1,0 +1,44 @@
+﻿@model TrabalhoLocadoraMVC2.Models.Copia
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Copia</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TituloId, "Titulo")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("TituloId", String.Empty)
+            @Html.ValidationMessageFor(model => model.TituloId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TipoCopiaId, "TipoCopia")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("TipoCopiaId", String.Empty)
+            @Html.ValidationMessageFor(model => model.TipoCopiaId)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
