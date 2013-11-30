@@ -11,30 +11,16 @@
     <legend>Copia</legend>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.Titulo.Nome)
+         @Html.DisplayNameFor(model => model.TipoCopiaId)
     </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.Titulo.Nome)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.TipoCopia.Descricao)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.TipoCopia.Descricao)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Descricao)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Descricao)
+        @Html.DisplayFor(model => model.TipoCopiaId)
     </div>
 </fieldset>
 @using (Html.BeginForm()) {
-    @Html.AntiForgeryToken()
     <p>
         <input type="submit" value="Delete" /> |
         @Html.ActionLink("Back to List", "Index")
     </p>
 }
+

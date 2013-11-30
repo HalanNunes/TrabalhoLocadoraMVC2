@@ -7,7 +7,6 @@
 <h2>Create</h2>
 
 @using (Html.BeginForm()) {
-    @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
 
     <fieldset>
@@ -17,7 +16,7 @@
             @Html.LabelFor(model => model.TituloId)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.TituloId)
+            @Html.EditorFor(model => model.TituloId)    
             @Html.ValidationMessageFor(model => model.TituloId)
         </div>
 

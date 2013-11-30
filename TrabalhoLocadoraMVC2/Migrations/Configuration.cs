@@ -4,6 +4,7 @@ namespace TrabalhoLocadoraMVC2.Migrations
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
+    using TrabalhoLocadoraMVC2.Models;
 
     internal sealed class Configuration : DbMigrationsConfiguration<TrabalhoLocadoraMVC2.Models.Repository>
     {
@@ -14,18 +15,13 @@ namespace TrabalhoLocadoraMVC2.Migrations
 
         protected override void Seed(TrabalhoLocadoraMVC2.Models.Repository context)
         {
-            //  This method will be called after migrating to the latest version.
-
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data. E.g.
-            //
-            //    context.People.AddOrUpdate(
-            //      p => p.FullName,
-            //      new Person { FullName = "Andrew Peters" },
-            //      new Person { FullName = "Brice Lambson" },
-            //      new Person { FullName = "Rowan Miller" }
-            //    );
-            //
+            context.TipoCopias.AddOrUpdate(
+                p => p.Descricao,
+                new TipoCopia { Descricao = "CDRom" },
+                new TipoCopia { Descricao = "DVD" },
+                new TipoCopia { Descricao = "Blue Ray" },
+                new TipoCopia { Descricao = "VHS" }
+                );
         }
     }
 }

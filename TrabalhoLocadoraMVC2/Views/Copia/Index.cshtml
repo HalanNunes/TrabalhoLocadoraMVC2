@@ -12,13 +12,8 @@
 <table>
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Titulo.Nome)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TipoCopia.Descricao)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Descricao)
+            @Html.DisplayNameFor(model => model.TituloId)
+            @Html.DisplayNameFor(model => model.TipoCopiaId)
         </th>
         <th></th>
     </tr>
@@ -26,13 +21,7 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Titulo.Nome)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TipoCopia.Descricao)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Descricao)
+            @Html.DisplayFor(modelItem => item.TipoCopia)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
@@ -43,3 +32,4 @@
 }
 
 </table>
+
