@@ -361,6 +361,8 @@
     <Content Include="Views\Titulo\Create.cshtml" />
     <Content Include="Views\Titulo\Edit.cshtml" />
     <Content Include="Views\Titulo\Delete.cshtml" />
+    <Content Include="Views\Shared\_IndexPartial.cshtml" />
+    <Content Include="Views\Cliente\addCreditos.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

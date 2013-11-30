@@ -16,18 +16,18 @@
         @Html.HiddenFor(model => model.Id)
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.TituloId, "Titulo")
+            @Html.LabelFor(model => model.TituloId)
         </div>
         <div class="editor-field">
-            @Html.DropDownList("TituloId", String.Empty)
+            @Html.EditorFor(model => model.TituloId)
             @Html.ValidationMessageFor(model => model.TituloId)
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.TipoCopiaId, "TipoCopia")
+            @Html.LabelFor(model => model.TipoCopiaId)
         </div>
         <div class="editor-field">
-            @Html.DropDownList("TipoCopiaId", String.Empty)
+            @Html.EditorFor(model => model.TipoCopiaId)
             @Html.ValidationMessageFor(model => model.TipoCopiaId)
         </div>
 

@@ -9,6 +9,7 @@ using TrabalhoLocadoraMVC2.Models;
 
 namespace TrabalhoLocadoraMVC2.Controllers
 {
+    [Authorize]
     public class ClienteController : Controller
     {
         private Repository db = new Repository();
@@ -79,6 +80,30 @@ namespace TrabalhoLocadoraMVC2.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit(Cliente cliente)
         {
+            if (ModelState.IsValid)
+            {
+                db.Entry(cliente).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(cliente);
+        }
+
+        public ActionResult AddCreditos(long id = 0)
+        {
+            Cliente cliente = db.Clientes.Find(id);
+            if (cliente == null)
+            {
+                return HttpNotFound();
+            }
+            return View(cliente);
+        }
+
+        [HttpPost]
+        public ActionResult AddCreditos(Int64 id, decimal valorAcrescimo)
+        {
+            Cliente cliente = db.Clientes.Find(id);
+            cliente.Saldo += valorAcrescimo;
             if (ModelState.IsValid)
             {
                 db.Entry(cliente).State = EntityState.Modified;

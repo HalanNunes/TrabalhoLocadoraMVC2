@@ -9,6 +9,7 @@ using TrabalhoLocadoraMVC2.Models;
 
 namespace TrabalhoLocadoraMVC2.Controllers
 {
+    [Authorize]
     public class LocacaoController : Controller
     {
         private Repository db = new Repository();

@@ -1,0 +1,38 @@
+﻿@model TrabalhoLocadoraMVC2.Models.Cliente
+
+@{
+    ViewBag.Title = "Add Créditos";
+}
+
+<h2>Add Créditos</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Cliente</legend>
+
+        @Html.HiddenFor(model => model.Id)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ValorAcrescimo)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ValorAcrescimo)
+            @Html.ValidationMessageFor(model => model.ValorAcrescimo)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

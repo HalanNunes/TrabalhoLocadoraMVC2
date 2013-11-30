@@ -9,6 +9,7 @@ using TrabalhoLocadoraMVC2.Models;
 
 namespace TrabalhoLocadoraMVC2.Controllers
 {
+    [Authorize]
     public class CopiaController : Controller
     {
         private Repository db = new Repository();
@@ -18,8 +19,7 @@ namespace TrabalhoLocadoraMVC2.Controllers
 
         public ActionResult Index()
         {
-            var copias = db.Copias.Include(c => c.Titulo).Include(c => c.TipoCopia);
-            return View(copias.ToList());
+            return View(db.Copias.ToList());
         }
 
         //
@@ -40,8 +40,6 @@ namespace TrabalhoLocadoraMVC2.Controllers
 
         public ActionResult Create()
         {
-            ViewBag.TituloId = new SelectList(db.Titulos, "Id", "Nome");
-            ViewBag.TipoCopiaId = new SelectList(db.TipoCopias, "Id", "Descricao");
             return View();
         }
 
@@ -49,9 +47,10 @@ namespace TrabalhoLocadoraMVC2.Controllers
         // POST: /Copia/Create
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
         public ActionResult Create(Copia copia)
         {
+            copia.TipoCopia = db.TipoCopias.Find(copia.TipoCopiaId);
+            copia.Titulo = db.Titulos.Find(copia.TituloId);
             if (ModelState.IsValid)
             {
                 db.Copias.Add(copia);
@@ -59,8 +58,6 @@ namespace TrabalhoLocadoraMVC2.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.TituloId = new SelectList(db.Titulos, "Id", "Nome", copia.TituloId);
-            ViewBag.TipoCopiaId = new SelectList(db.TipoCopias, "Id", "Descricao", copia.TipoCopiaId);
             return View(copia);
         }
 
@@ -74,8 +71,6 @@ namespace TrabalhoLocadoraMVC2.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.TituloId = new SelectList(db.Titulos, "Id", "Nome", copia.TituloId);
-            ViewBag.TipoCopiaId = new SelectList(db.TipoCopias, "Id", "Descricao", copia.TipoCopiaId);
             return View(copia);
         }
 
@@ -83,17 +78,16 @@ namespace TrabalhoLocadoraMVC2.Controllers
         // POST: /Copia/Edit/5
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
         public ActionResult Edit(Copia copia)
         {
+            copia.TipoCopia = db.TipoCopias.Find(copia.TipoCopiaId);
+            copia.Titulo = db.Titulos.Find(copia.TituloId);
             if (ModelState.IsValid)
             {
                 db.Entry(copia).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.TituloId = new SelectList(db.Titulos, "Id", "Nome", copia.TituloId);
-            ViewBag.TipoCopiaId = new SelectList(db.TipoCopias, "Id", "Descricao", copia.TipoCopiaId);
             return View(copia);
         }
 
@@ -114,7 +108,6 @@ namespace TrabalhoLocadoraMVC2.Controllers
         // POST: /Copia/Delete/5
 
         [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(long id)
         {
             Copia copia = db.Copias.Find(id);

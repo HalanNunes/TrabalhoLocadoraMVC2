@@ -47,5 +47,8 @@ namespace TrabalhoLocadoraMVC2.Models
         public decimal Saldo { get; set; }
 
         public virtual ICollection<Locacao> Locacoes { get; set; }
+
+        [Display(Name = "Valor de acréscimo")]
+        public decimal ValorAcrescimo = decimal.Zero;
     }
 }
