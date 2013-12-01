@@ -1,0 +1,8 @@
+﻿
+@{
+    TrabalhoLocadoraMVC2.Models.Repository db = new TrabalhoLocadoraMVC2.Models.Repository();
+    var list = db.TipoTitulos.OrderBy(c => c.Descricao).ToList();
+    var selectList = new SelectList(list, "Id", "Descricao", Model);     
+}
+
+@Html.DropDownListFor(model => model, selectList, "[Selecione]");
