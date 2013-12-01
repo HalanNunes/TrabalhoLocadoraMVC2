@@ -4,33 +4,34 @@
     ViewBag.Title = "Edit";
 }
 
-<h2>Edit</h2>
+<body style="padding-top: 40px; padding-bottom: 40px; background-color: #f5f5f5;">
+    <div class="container">
+        <form action="/Ator/Edit/{id}" method="post" novalidate="novalidate" class="form-signin">
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true)
 
-@using (Html.BeginForm()) {
-    @Html.AntiForgeryToken()
-    @Html.ValidationSummary(true)
+            <fieldset>
+                <legend>Editar Ator</legend>
 
-    <fieldset>
-        <legend>Ator</legend>
+                @Html.HiddenFor(model => model.Id)
 
-        @Html.HiddenFor(model => model.Id)
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Nome)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Nome)
-            @Html.ValidationMessageFor(model => model.Nome)
-        </div>
-
-        <p>
-            <input type="submit" value="Save" />
-        </p>
-    </fieldset>
-}
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Nome)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.Nome)
+                    @Html.ValidationMessageFor(model => model.Nome)
+                </div>
+                <p>
+                    <input type="submit" value="Salvar" class="btn btn-large btn-primary" />
+                </p>
+            </fieldset>
+        </form>
+    </div>
+</body>
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Retornar à lista", "Index")
 </div>
 
 @section Scripts {

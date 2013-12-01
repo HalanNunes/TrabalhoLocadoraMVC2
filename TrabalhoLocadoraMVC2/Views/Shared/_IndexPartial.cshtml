@@ -5,7 +5,7 @@
                 <div class="nav-collapse collapse">
                     <a href="#" class="brand">Projeto Locadora de Filmes</a>                    
                     <p class="navbar-text pull-right">
-                        Hello, @Html.ActionLink(User.Identity.Name, "Manage", "Account", routeValues: null, htmlAttributes: new { @class = "username", title = "Manage" })!
+                        Olá, @Html.ActionLink(User.Identity.Name, "Manage", "Account", routeValues: null, htmlAttributes: new { @class = "username", title = "Manage" })!
                     <ul id="menu" class="nav navbar">
                         <li class="active">@Html.ActionLink("Inico", "Index", "Home")</li>
                         <li>@Html.ActionLink("Ator", "Index", "Ator")</li>
@@ -19,16 +19,16 @@
                     </ul>
                     <ul id="menu" class="nav pull-right">
                         <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="icon-align-justify"></b></a>
-                        <ul class="dropdown-menu">
-                          <li>
-                              @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" })) {
-                                 @Html.AntiForgeryToken()
-                                 <a href="javascript:document.getElementById('logoutForm').submit()">Log off</a>
-                              }
-                          </li>
-                        </ul>
-                      </li>
+                            <ul class="dropdown-menu">
+                              <li>
+                                  @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" })) {
+                                     @Html.AntiForgeryToken()
+                                     <a href="javascript:document.getElementById('logoutForm').submit()">Log off</a>
+                                  }
+                              </li>
+                            </ul>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="icon-align-justify"></b></a>
+                        </li>
                     </ul>
                 </div>
             </div>

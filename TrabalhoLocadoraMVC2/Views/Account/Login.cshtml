@@ -4,17 +4,17 @@
         <form action="/Account/Login" method="post" novalidate="novalidate" class="form-signin">
             @Html.AntiForgeryToken()
             @Html.ValidationSummary(true)
-            <h2 class="form-singin-heading">Use a local account to log in.</h2>
+            <h2 class="form-singin-heading">Utilize uma conta local para logar.</h2>
             <input class="input-block-level" data-val="true" data-val-required="O campo User name é obrigatório." id="UserName" name="UserName" type="text" value="" placeholder="User Name">
             <input class="input-block-level" data-val="true" data-val-required="O campo Password é obrigatório." id="Password" name="Password" type="password" placeholder="Password">
             <label class="checkbox">
                 <input name="RememberMe" type="hidden" value="false">
-                <input data-val="true" data-val-required="O campo Remember me? é obrigatório." id="RememberMe" name="RememberMe" type="checkbox" value="true">Remember Me
+                <input data-val="true" data-val-required="O campo Lembre-me? é obrigatório." id="RememberMe" name="RememberMe" type="checkbox" value="true">Lembre-me
             </label>
             <button class="btn btn-large btn-primary" type="submit">Log in</button>
             <button class="btn btn-large btn-primary" onclick="/Account/ExternalLoginsList" name="provider" value="google" title="Log in using your Google account">Google Account</button>
             <p>
-                @Html.ActionLink("Register", "Register") if you don't have an account.
+                @Html.ActionLink("Cadastra-se", "Register") se você não tiver uma conta.
             </p>
         </form>
     </div>

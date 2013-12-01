@@ -169,6 +169,7 @@ textarea {
   vertical-align: top;
 }
 
+.div-signin,
 .form-signin {
     max-width: 300px;
     padding: 19px 29px 29px;
@@ -182,10 +183,14 @@ textarea {
     -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
     box-shadow: 0 1px 2px rgba(0,0,0,.05);
 }
+
+.div-signin .div-signin-heading,
 .form-signin .form-signin-heading,
 .form-signin .checkbox {
     margin-bottom: 10px;
 }
+.div-signin input[type="text"],
+.div-signin input[type="password"],
 .form-signin input[type="text"],
 .form-signin input[type="password"] {
     font-size: 16px;
@@ -3376,6 +3381,7 @@ input[type="button"].btn-block {
   width: 100%;
 }
 
+.btn-primary > a.active,
 .btn-primary.active,
 .btn-warning.active,
 .btn-danger.active,
@@ -3385,6 +3391,7 @@ input[type="button"].btn-block {
   color: rgba(255, 255, 255, 0.75);
 }
 
+.btn-primary > a,
 .btn-primary {
   color: #ffffff;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
@@ -3402,6 +3409,12 @@ input[type="button"].btn-block {
   filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
 }
 
+.btn-primary > a:hover,
+.btn-primary > a:focus,
+.btn-primary > a:active,
+.btn-primary > a.active,
+.btn-primary > a.disabled,
+.btn-primary > a[disabled],
 .btn-primary:hover,
 .btn-primary:focus,
 .btn-primary:active,
@@ -3413,6 +3426,8 @@ input[type="button"].btn-block {
   *background-color: #003bb3;
 }
 
+.btn-primary > a:active,
+.btn-primary > a.active,
 .btn-primary:active,
 .btn-primary.active {
   background-color: #003399 \9;
@@ -4145,6 +4160,10 @@ input[type="submit"].btn.btn-mini {
 
 .nav-tabs.nav-stacked {
   border-bottom: 0;
+}
+
+button.btn.btn-large.btn-primary > a:hover{
+    text-decoration: none;
 }
 
 .nav-tabs.nav-stacked > li > a {

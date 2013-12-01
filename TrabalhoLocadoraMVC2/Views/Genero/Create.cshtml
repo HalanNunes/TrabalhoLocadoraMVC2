@@ -3,32 +3,33 @@
 @{
     ViewBag.Title = "Create";
 }
+<body style="padding-top: 40px; padding-bottom: 40px; background-color: #f5f5f5;">
+    <div class="container">
+        <form action="/Genero/Create" method="post" novalidate="novalidate" class="form-signin">
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true)
 
-<h2>Create</h2>
+            <fieldset>
+                <legend>Cadastro de Genero</legend>
 
-@using (Html.BeginForm()) {
-    @Html.AntiForgeryToken()
-    @Html.ValidationSummary(true)
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Descricao)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.Descricao)
+                    @Html.ValidationMessageFor(model => model.Descricao)
+                </div>
 
-    <fieldset>
-        <legend>Genero</legend>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Descricao)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Descricao)
-            @Html.ValidationMessageFor(model => model.Descricao)
-        </div>
-
-        <p>
-            <input type="submit" value="Create" />
-        </p>
-    </fieldset>
-}
+                <p>
+                    <input class="btn btn-large btn-primary" type="submit" value="Salvar" />
+                </p>
+            </fieldset>
+        </form>
+    </div>
+</body>
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Retornar à lista", "Index")
 </div>
 
 @section Scripts {

@@ -24,7 +24,7 @@
             @Html.DisplayNameFor(model => model.Endereco)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.NumeroEndereco)
+            @Html.DisplayName("Nº")
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Bairro)
@@ -40,7 +40,8 @@
         </th>
         <th></th>
     </tr>
-
+</table>
+<table class="table table-condensed table-hover">
 @foreach (var item in Model) {
     <tr>
         <td>
@@ -71,10 +72,10 @@
             @Html.DisplayFor(modelItem => item.Saldo)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id }) |
-            @Html.ActionLink("Add Créditos", "addCreditos", new { id=item.Id })
+            @Html.ActionLink("Alterar", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Visualizar", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Excluir", "Delete", new { id=item.Id }) |
+            @Html.ActionLink("Adicionar Créditos", "addCreditos", new { id=item.Id })
         </td>
     </tr>
 }

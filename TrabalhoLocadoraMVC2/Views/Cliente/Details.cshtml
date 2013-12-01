@@ -3,76 +3,60 @@
 @{
     ViewBag.Title = "Details";
 }
+<body style="padding-top: 40px; padding-bottom: 40px; background-color: #f5f5f5;">
+    <div class="container">
+        <div class="div-signin">
+            <fieldset>
+                <legend>Detalhes do Cliente</legend>
 
-<h2>Details</h2>
+                <div class="display-label">
+                     @Html.DisplayNameFor(model => model.Nome): 
+                    @Html.DisplayFor(model => model.Nome)
+                </div>
 
-<fieldset>
-    <legend>Cliente</legend>
+                <div class="display-label">
+                     @Html.DisplayNameFor(model => model.Sexo): 
+                    @Html.DisplayFor(model => model.Sexo)
+                </div>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Nome)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Nome)
-    </div>
+                <div class="display-label">
+                     @Html.DisplayNameFor(model => model.Nascimento): 
+                    @Html.DisplayFor(model => model.Nascimento)
+                </div>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Sexo)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Sexo)
-    </div>
+                <div class="display-label">
+                     @Html.DisplayNameFor(model => model.Endereco): 
+                    @Html.DisplayFor(model => model.Endereco)
+                </div>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Nascimento)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Nascimento)
-    </div>
+                <div class="display-label">
+                     @Html.DisplayName("Nº"): 
+                    @Html.DisplayFor(model => model.NumeroEndereco)
+                </div>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Endereco)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Endereco)
-    </div>
+                <div class="display-label">
+                     @Html.DisplayNameFor(model => model.Bairro): 
+                    @Html.DisplayFor(model => model.Bairro)
+                </div>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.NumeroEndereco)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.NumeroEndereco)
-    </div>
+                <div class="display-label">
+                     @Html.DisplayNameFor(model => model.Complemento): 
+                    @Html.DisplayFor(model => model.Complemento)
+                </div>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Bairro)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Bairro)
-    </div>
+                <div class="display-label">
+                     @Html.DisplayNameFor(model => model.Cidade): 
+                    @Html.DisplayFor(model => model.Cidade)
+                </div>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Complemento)
+                <div class="display-label">
+                     @Html.DisplayNameFor(model => model.Saldo): 
+                    @Html.DisplayFor(model => model.Saldo)
+                </div>
+                <br>
+                <button class="btn btn-large btn-primary">@Html.ActionLink("Editar", "Edit", new { id=Model.Id })</button>
+                <button class="btn btn-large btn-primary">@Html.ActionLink("Voltar à Lista", "Index")</button>
+            </fieldset>
+        </div>
     </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Complemento)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Cidade)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Cidade)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Saldo)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Saldo)
-    </div>
-</fieldset>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+</body>

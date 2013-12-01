@@ -4,19 +4,22 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<body style="padding-top: 40px; padding-bottom: 40px; background-color: #f5f5f5;">
+    <div class="container">
+        <div class="div-signin">
+            <fieldset>
+                <legend>Detahes da Copia</legend>
 
-<fieldset>
-    <legend>Copia</legend>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.TipoCopiaId)
+                <div class="display-label">
+                     @Html.DisplayNameFor(model => model.TipoCopiaId)
+                </div>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.TipoCopiaId)
+                </div>
+            </fieldset>
+            <br>
+            <button class="btn btn-large btn-primary">@Html.ActionLink("Editar", "Edit", new { id=Model.Id })</button>
+            <button class="btn btn-large btn-primary">@Html.ActionLink("Retornar à Lista", "Index")</button>
+        </div>
     </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.TipoCopiaId)
-    </div>
-</fieldset>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+</body>

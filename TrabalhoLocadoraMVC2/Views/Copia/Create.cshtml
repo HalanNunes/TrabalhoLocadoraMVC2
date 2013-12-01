@@ -3,40 +3,41 @@
 @{
     ViewBag.Title = "Create";
 }
+<body style="padding-top: 40px; padding-bottom: 40px; background-color: #f5f5f5;">
+    <div class="container">
+        <form action="/Copia/Create" method="post" novalidate="novalidate" class="form-signin">
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true)
 
-<h2>Create</h2>
+            <fieldset>
+                <legend>Criar Copia</legend>
 
-@using (Html.BeginForm()) {
-    @Html.AntiForgeryToken()
-    @Html.ValidationSummary(true)
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.TituloId, "Titulo")
+                </div>
+                <div class="editor-field">
+                    @Html.DropDownList("TituloId", String.Empty)
+                    @Html.ValidationMessageFor(model => model.TituloId)
+                </div>
 
-    <fieldset>
-        <legend>Copia</legend>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.TipoCopiaId, "Tipo da Copia")
+                </div>
+                <div class="editor-field">
+                    @Html.DropDownList("TipoCopiaId", String.Empty)
+                    @Html.ValidationMessageFor(model => model.TipoCopiaId)
+                </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.TituloId, "Titulo")
-        </div>
-        <div class="editor-field">
-            @Html.DropDownList("TituloId", String.Empty)
-            @Html.ValidationMessageFor(model => model.TituloId)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.TipoCopiaId, "Tipo da Copia")
-        </div>
-        <div class="editor-field">
-            @Html.DropDownList("TipoCopiaId", String.Empty)
-            @Html.ValidationMessageFor(model => model.TipoCopiaId)
-        </div>
-
-        <p>
-            <input type="submit" value="Create" />
-        </p>
-    </fieldset>
-}
+                <p>
+                    <input type="submit" value="Salvar" class="btn btn-large btn-primary" />
+                </p>
+            </fieldset>
+        </form>
+    </div>
+</body>
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Retornar à lista", "Index")
 </div>
 
 @section Scripts {
