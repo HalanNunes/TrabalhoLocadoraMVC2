@@ -3,7 +3,7 @@
         <div class="navbar-inner">
             <div class="container-fluid">
                 <div class="nav-collapse collapse">
-                    <a href="#" class="brand">Projeto Locadora de Filmes</a>                    
+                    <a href="/Home/Index" class="brand">Projeto Locadora de Filmes</a>                    
                     <p class="navbar-text pull-right">
                         Olá, @Html.ActionLink(User.Identity.Name, "Manage", "Account", routeValues: null, htmlAttributes: new { @class = "username", title = "Manage" })!
                     <ul id="menu" class="nav navbar">
@@ -15,7 +15,6 @@
                         <li>@Html.ActionLink("Locacao", "Index", "Locacao")</li>
                         <li>@Html.ActionLink("Tipo Titulo", "Index", "TipoTitulo")</li>
                         <li>@Html.ActionLink("Titulo", "Index", "Titulo")</li>
-                        <li>@Html.ActionLink("Sobre", "About", "Home")</li>
                     </ul>
                     <ul id="menu" class="nav pull-right">
                         <li class="dropdown">
