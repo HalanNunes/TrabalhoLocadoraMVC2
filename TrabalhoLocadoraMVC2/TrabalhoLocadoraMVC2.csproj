@@ -216,6 +216,27 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Bootstrap\css\bootstrap-responsive.css" />
+    <Content Include="Content\Bootstrap\css\bootstrap-responsive.min.css" />
+    <Content Include="Content\Bootstrap\css\bootstrap.css" />
+    <Content Include="Content\Bootstrap\css\bootstrap.min.css" />
+    <Content Include="Content\Bootstrap\img\glyphicons-halflings-white.png" />
+    <Content Include="Content\Bootstrap\img\glyphicons-halflings.png" />
+    <Content Include="Content\Bootstrap\js\bootstrap-affix.js" />
+    <Content Include="Content\Bootstrap\js\bootstrap-alert.js" />
+    <Content Include="Content\Bootstrap\js\bootstrap-button.js" />
+    <Content Include="Content\Bootstrap\js\bootstrap-carousel.js" />
+    <Content Include="Content\Bootstrap\js\bootstrap-collapse.js" />
+    <Content Include="Content\Bootstrap\js\bootstrap-dropdown.js" />
+    <Content Include="Content\Bootstrap\js\bootstrap-modal.js" />
+    <Content Include="Content\Bootstrap\js\bootstrap-popover.js" />
+    <Content Include="Content\Bootstrap\js\bootstrap-scrollspy.js" />
+    <Content Include="Content\Bootstrap\js\bootstrap-tab.js" />
+    <Content Include="Content\Bootstrap\js\bootstrap-tooltip.js" />
+    <Content Include="Content\Bootstrap\js\bootstrap-transition.js" />
+    <Content Include="Content\Bootstrap\js\bootstrap-typeahead.js" />
+    <Content Include="Content\Bootstrap\js\bootstrap.js" />
+    <Content Include="Content\Bootstrap\js\bootstrap.min.js" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -275,6 +296,10 @@
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\jquery-1.8.2.min.js" />
+    <None Include="Scripts\jquery-2.0.3.intellisense.js" />
+    <Content Include="Scripts\jquery-2.0.3.js" />
+    <Content Include="Scripts\jquery-2.0.3.min.js" />
+    <Content Include="Scripts\jquery-2.0.3.min.map" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery-ui-1.8.24.js" />
     <Content Include="Scripts\jquery-ui-1.8.24.min.js" />
@@ -395,7 +420,7 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerPort>5962</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost:64802/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>

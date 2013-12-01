@@ -5,20 +5,14 @@
         <title>@ViewBag.Title - My ASP.NET MVC Application</title>
         <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
         <meta name="viewport" content="width=device-width" />
-        @Styles.Render("~/Content/css")
         @Scripts.Render("~/bundles/modernizr")
+        @Scripts.Render("~/bundles/jquery")
+        @Styles.Render("~/Content/Bootstrap/css")
+        @Scripts.Render("~/Content/Bootstrap/js")
     </head>
     <body>
         <header>
-            <div class="content-wrapper">
-                <div class="float-left">
-                    <p class="site-title">@Html.ActionLink("your logo here", "Index", "Home")</p>
-                </div>
-                <div class="float-right">
-                    @Html.Partial("_IndexPartial")
-                    
-                </div>
-            </div>
+            @Html.Partial("_IndexPartial")                   
         </header>
         <div id="body">
             @RenderSection("featured", required: false)
