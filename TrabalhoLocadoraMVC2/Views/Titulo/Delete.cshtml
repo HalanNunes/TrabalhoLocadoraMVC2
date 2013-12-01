@@ -3,66 +3,52 @@
 @{
     ViewBag.Title = "Delete";
 }
+<body style="padding-top: 40px; padding-bottom: 40px; background-color: #f5f5f5;">
+    <div class="container">
+        <div class="div-signin">
+            <fieldset>
+                <legend>Tem certeza que deseja excluir este registro?</legend>
+                <div class="display-label">
+                     @Html.DisplayNameFor(model => model.Nome): 
+                    @Html.DisplayFor(model => model.Nome)
+                </div>
 
-<h2>Delete</h2>
+                <div class="display-label">
+                     @Html.DisplayNameFor(model => model.Sinopse): 
+                    @Html.DisplayFor(model => model.Sinopse)
+                </div>
 
-<h3>Are you sure you want to delete this?</h3>
-<fieldset>
-    <legend>Titulo</legend>
+                <div class="display-label">
+                     @Html.DisplayNameFor(model => model.OrigemTitulo): 
+                    @Html.DisplayFor(model => model.OrigemTitulo)
+                </div>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Nome)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Nome)
-    </div>
+                <div class="display-label">
+                     @Html.DisplayNameFor(model => model.Ano): 
+                    @Html.DisplayFor(model => model.Ano)
+                </div>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Sinopse)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Sinopse)
-    </div>
+                <div class="display-label">
+                     @Html.DisplayNameFor(model => model.TipoTituloId): 
+                    @Html.DisplayFor(model => model.TipoTituloId)
+                </div>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.OrigemTitulo)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.OrigemTitulo)
-    </div>
+                <div class="display-label">
+                     @Html.DisplayNameFor(model => model.DescricaoAtores): 
+                    @Html.DisplayFor(model => model.DescricaoAtores)
+                </div>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Ano)
+                <div class="display-label">
+                     @Html.DisplayNameFor(model => model.DescricaoGeneros): 
+                    @Html.DisplayFor(model => model.DescricaoGeneros)
+                </div>
+            </fieldset>
+            <br>
+            @using (Html.BeginForm()) {
+                @Html.AntiForgeryToken()
+                <input class="btn btn-large btn-primary" type="submit" value="Excluir" />
+            }
+        </div>
     </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Ano)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.TipoTituloId)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.TipoTituloId)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.DescricaoAtores)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.DescricaoAtores)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.DescricaoGeneros)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.DescricaoGeneros)
-    </div>
-</fieldset>
-@using (Html.BeginForm()) {
-    @Html.AntiForgeryToken()
-    <p>
-        <input type="submit" value="Delete" /> |
-        @Html.ActionLink("Back to List", "Index")
-    </p>
-}
+</body>
+@Html.ActionLink("Retornar à lista", "Index")
