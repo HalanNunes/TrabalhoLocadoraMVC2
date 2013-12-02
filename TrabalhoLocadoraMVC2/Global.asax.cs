@@ -6,6 +6,7 @@ using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using TrabalhoLocadoraMVC2.Models;
 
 namespace TrabalhoLocadoraMVC2
 {
@@ -23,6 +24,16 @@ namespace TrabalhoLocadoraMVC2
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             AuthConfig.RegisterAuth();
+
+            Repository db = new Repository();
+            if (db.TipoCopias.Count() == 0)
+            {
+                db.TipoCopias.Add(new TipoCopia { Descricao = "CDRom" });
+                db.TipoCopias.Add(new TipoCopia { Descricao = "DVD" });
+                db.TipoCopias.Add(new TipoCopia { Descricao = "Blue Ray" });
+                db.TipoCopias.Add(new TipoCopia { Descricao = "VHS" });
+                db.SaveChanges();
+            }
         }
     }
 }

@@ -11,10 +11,13 @@
                 <legend>Detahes da Copia</legend>
 
                 <div class="display-label">
-                     @Html.DisplayNameFor(model => model.TipoCopiaId)
+                     @Html.DisplayNameFor(model => model.TituloId): 
+                    @Html.DisplayFor(model => model.Titulo.Nome)
                 </div>
-                <div class="display-field">
-                    @Html.DisplayFor(model => model.TipoCopiaId)
+
+                <div class="display-label">
+                     @Html.DisplayNameFor(model => model.TipoCopiaId): 
+                    @Html.DisplayFor(model => model.TipoCopia.Descricao)
                 </div>
             </fieldset>
             <br>

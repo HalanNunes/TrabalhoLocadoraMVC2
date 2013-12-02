@@ -42,7 +42,7 @@ namespace TrabalhoLocadoraMVC2.Controllers
         public ActionResult Create()
         {
             ViewBag.ClienteId = new SelectList(db.Clientes, "Id", "Nome");
-            ViewBag.CopiaId = new SelectList(db.Copias, "Id", "Copia");
+            ViewBag.CopiaId = new SelectList(db.TipoCopias, "Id", "Descricao");
             return View();
         }
 

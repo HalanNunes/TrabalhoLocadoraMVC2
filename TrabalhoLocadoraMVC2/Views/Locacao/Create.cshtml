@@ -6,6 +6,7 @@
 <body style="padding-top: 40px; padding-bottom: 40px; background-color: #f5f5f5;">
     <div class="container">
         <form action="/Locacao/Create" method="post" novalidate="novalidate" class="form-signin">
+            @Html.AntiForgeryToken()
             @Html.ValidationSummary(true)
 
             <fieldset>
@@ -18,7 +19,7 @@
                     @Html.DropDownList("ClienteId", String.Empty)
                     @Html.ValidationMessageFor(model => model.ClienteId)
                 </div>
-
+                
                 <div class="editor-label">
                     @Html.LabelFor(model => model.CopiaId, "Copia")
                 </div>
