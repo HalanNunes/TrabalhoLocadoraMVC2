@@ -3,32 +3,33 @@
 @{
     ViewBag.Title = "Definir data de devolução";
 }
+<body style="padding-top: 40px; padding-bottom: 40px; background-color: #f5f5f5;">
+    <div class="container">
+        <form action="/Locacao/Devolver" method="post" novalidate="novalidate" class="form-signin">
+            @Html.ValidationSummary(true)
 
-<h2>Definir data de devolução</h2>
+            <fieldset>
+                <legend>Locacao</legend>
 
-@using (Html.BeginForm()) {
-    @Html.ValidationSummary(true)
+                @Html.HiddenFor(model => model.Id)
 
-    <fieldset>
-        <legend>Locacao</legend>
-
-        @Html.HiddenFor(model => model.Id)
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.DataDevolucao)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.DataDevolucao)
-            @Html.ValidationMessageFor(model => model.DataDevolucao)
-        </div>
-        <p>
-            <input type="submit" value="Save" class="btn btn-success"/>
-        </p>
-    </fieldset>
-}
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.DataDevolucao)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.DataDevolucao)
+                    @Html.ValidationMessageFor(model => model.DataDevolucao)
+                </div>
+                <p>
+                    <input type="submit" value="Salvar" class="btn btn-large btn-primary"/>
+                </p>
+            </fieldset>
+        </form>
+    </div>
+</body>
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Retornar à lista", "Index")
 </div>
 
 @section Scripts {

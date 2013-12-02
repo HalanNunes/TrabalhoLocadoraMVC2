@@ -1,6 +1,6 @@
 ﻿@model TrabalhoLocadoraMVC2.Models.RegisterModel
 @{
-    ViewBag.Title = "Register";
+    ViewBag.Title = "Registrar";
 }
 <body style="padding-top: 40px; padding-bottom: 40px; background-color: #f5f5f5;">
     <div class="container">
@@ -8,11 +8,11 @@
             @Html.AntiForgeryToken()
             @Html.ValidationSummary(true)
             <fieldset>
-                <legend>Registro</legend>
+                <legend>Cadastro de Novo Usuário</legend>
                 <input data-val="true" data-val-required="O campo User name é obrigatório." id="UserName" name="UserName" type="text" value="" placeholder="Usuário">
                 <input data-val="true" data-val-length="The Password must be at least 6 characters long." data-val-length-max="100" data-val-length-min="6" data-val-required="O campo Password é obrigatório." id="Password" name="Password" type="password" placeholder="Senha">
                 <input data-val="true" data-val-equalto="The password and confirmation password do not match." data-val-equalto-other="*.Password" id="ConfirmPassword" name="ConfirmPassword" type="password" placeholder="Confirme Senha">
-                <input class="btn btn-large btn-primary" type="submit" value="Register">
+                <input class="btn btn-large btn-primary" type="submit" value="Cadastrar">
             </fieldset>
         </form>
     </div>

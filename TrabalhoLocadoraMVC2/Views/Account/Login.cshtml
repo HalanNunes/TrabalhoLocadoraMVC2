@@ -1,7 +1,7 @@
 ﻿@model TrabalhoLocadoraMVC2.Models.LoginModel
 <body style="padding-top: 40px; padding-bottom: 40px; background-color: #f5f5f5;">
     <div class="container">
-        <form action="/Account/Login" method="post" novalidate="novalidate" class="form-signin">
+        <form action="/Account/Login" method="post" novalidate="novalidate" class="form-signin" style="float: left; margin: 0 auto; margin-right: 50px; margin-left: 80px;">
             @Html.AntiForgeryToken()
             @Html.ValidationSummary(true)
             <h2 class="form-singin-heading">Utilize uma conta local para logar.</h2>
@@ -12,18 +12,17 @@
                 <input data-val="true" data-val-required="O campo Lembre-me? é obrigatório." id="RememberMe" name="RememberMe" type="checkbox" value="true">Lembre-me
             </label>
             <button class="btn btn-large btn-primary" type="submit">Log in</button>
-            <button class="btn btn-large btn-primary" onclick="/Account/ExternalLoginsList" name="provider" value="google" title="Log in using your Google account">Google Account</button>
-            <p>
-                @Html.ActionLink("Cadastra-se", "Register") se você não tiver uma conta.
-            </p>
         </form>
+        <form action="/Account/ExternalLogin?ReturnUrl=" method="post" novalidate="novalidate"  class="form-signin" style="float: left; margin: 0 auto;"><input name="__RequestVerificationToken" type="hidden" value="9cfGD6BZWD-RwLZyPfKAKfmSCNYu6yvuXRNtvsNmxHfCzr-gEEfp95nmLgrMyLoNrqvzUPf9MZ-EsS1N8TmciBS4uVzZT7IxTBgCSsazJ8c1">
+            <h2 class="form-singin-heading">Utilize a conta do Google para logar.</h2>
+            <button class="btn btn-large btn-primary" type="submit" name="provider" value="google" title="Log in using your Google account">Google Account</button>
+        </form>
+        
     </div>
 </body>
-<section class="social" id="socialLoginForm">
-    <h2>Use another service to log in.</h2>
-    @Html.Action("ExternalLoginsList", new { ReturnUrl = ViewBag.ReturnUrl })
-</section>
-
+<p>
+    @Html.ActionLink("Cadastra-se", "Register") se você não tiver uma conta.
+</p>
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }
